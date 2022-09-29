@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="TrabalhoDom.css">
+   <link rel="DomScript" href="DomScript.js">
+    <title>Trabalho DOM</title>
+</head>
+<body>
+   
+        <div class="background">
+            <h1> <span id="msg"></span>, 
+                <span id="nome"></span></h1>
+
+            <div class="picture"> <img src=" " id="picture"></div>
+
+            <p> Tenha uma optima <span id = "weekDay"></span>, <span id="nome1"></span></p>, 
+       </div>
+
+
+<script> 
+getName = prompt(); //possibilita o usuario inserir op seu nome
+
+nome = document.getElementById("nome")
+nome1 = document.getElementById ("nome1")
+nome.innerHTML = getName
+nome1.innerHTML = getName
+
+let date = new Date();
+
+let time = date.getHours();
+let msg;
+
+msg = document.getElementById("msg")
+pic = document.getElementById("picture")
+let greetings
+let imagem
+
+if( time< 12) {
+    greetings = "Bom dia";
+    imagem = "morning_picture.jpg"
+} else if(time >= 12 && time <= 18) {
+    greetings = "Boa tarde";
+    imagem = "afternoon_picture.jpg"
+} else {
+    greetings = "Boa noite";
+    imagem = "night_picture.jpg"
+}
+
+msg.innerHTML = greetings
+picture.src = imagem
+
+weekDay = document.getElementById ("weekDay")
+let today = date.getDay();
+
+let weekMsg 
+
+switch(today) {
+    case 0:
+    weekMsg = "Domingo"
+    break;
+
+    case 1:
+    weekMsg = "Segunda Feira"
+    break;
+
+    case 2:
+    weekMsg = "Terca Feira"
+    break;
+
+    case 3:
+    weekMsg = "Quarta Feira"
+     break;
+
+    case 4:
+    weekMsg = "Quinta Feira"
+    break;
+
+    case 5:
+    weekMsg = "Sexta Feira"
+    break;
+
+    case 6:
+    weekMsg = "Sabado"
+
+    default: 
+    break;
+}
+
+weekDay.innerHTML = weekMsg
+    </script>
+</body>
+</html>
